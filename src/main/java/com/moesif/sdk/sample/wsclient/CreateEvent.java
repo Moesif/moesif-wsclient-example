@@ -24,7 +24,8 @@ public class CreateEvent {
                              String userAgent,
                              String contentType,
                              String ipAddress) {
-        Instant requestTime = Instant.now();
+        Instant currentTime = Instant.now();
+        Instant requestTime = buildRequestTime(currentTime);
         String requestTimeStr = requestTime.toString();
         String responseTimeStr = buildResponseTime(requestTime).toString();
 
@@ -90,6 +91,17 @@ public class CreateEvent {
                 "     }";
 
         return sampleEvent;
+    }
+
+    /**
+     * Takes current time and makes request time between 1-2500 milliseconds later
+     * @param currentTime Current time
+     * @return Request time
+     */
+    private Instant buildRequestTime(Instant currentTime) {
+        Random r = new Random();
+        int randomMillis = r.nextInt(2500);
+        return currentTime.minus(randomMillis, ChronoUnit.MILLIS);
     }
 
     /**

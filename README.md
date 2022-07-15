@@ -1,21 +1,30 @@
-# Moesif WS Client Example
-
-WS is a library used in code to call REST APIs.
+# Moesif Play WS Client Example
 
 [Moesif](https://www.moesif.com) is an API analytics and monitoring
 platform. MoesifWsClientExample is a sample program which makes and
-sends a sample API to Moesif.
+sends a sample event to Moesif.
+
+[Standalone Play WS](https://github.com/playframework/play-ws) is an async HTTP client with fluent API.
+It is part of [Play Framework](https://www.playframework.com/documentation/2.8.x/JavaWS)
+
+This repository contains an example in Java and in Scala to send events to Moesif.  
+[See Moesif documentation](https://www.moesif.com/docs/api#log-an-api-call)
 
 ## How to run this example
-Java:
+Send single event to Moesif (Java):
 ```bash
-sbt "runMain com.moesif.sdk.sample.wsclient.MoesifWsClientExample <Your Moesif Application ID>"
+sbt "runMain com.moesif.sdk.sample.wsclient.MoesifWsClientExample <Your-Moesif-Application-ID>"
 ```
 
-Scala:
+Send single event to Moesif (Scala):
 ```bash
-sbt "runMain com.moesif.sdk.sample.wsclient.scala.MoesifWsClientScalaExample <Your Moesif Application ID>"
-```  
+sbt "runMain com.moesif.sdk.sample.wsclient.scala.MoesifWsClientScalaExample <Your-Moesif-Application-ID>"
+```
+
+Send a batch of events (Java):
+```bash
+sbt "runMain com.moesif.sdk.sample.wsclient.MoesifWsClientBatchExample <Number-of-events> <Your-Moesif-Application-ID>"
+```
 
 Your Moesif Collector Application Id can be found in the
 [_Moesif Portal_](https://www.moesif.com/). After signing up for a
@@ -38,9 +47,9 @@ Moesif has validated MoesifWsClientExample against the following combinations:
 
 | Scala         | Play WS          |
 |---------------|------------------|
-| Scala 2.11.12 | 2.7.9<br/>2.8.16 |
-| Scala 2.13.8  | 2.7.9<br/>2.8.16 |
+| Scala 2.11.12 | 2.7.9            |
 | Scala 2.12.16 | 2.7.9<br/>2.8.16 |
+| Scala 2.13.8  | 2.7.9<br/>2.8.16 |
 
 
 ### Future Updates

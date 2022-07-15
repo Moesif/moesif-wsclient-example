@@ -10,7 +10,7 @@ public class MoesifWsClientExample {
      * @param args Moesif Application ID, (optional URL)
      */
     public static void main(String[] args){
-        if (args.length == 0) {
+        if (args.length == 0 || args[0].equals("<Your-Moesif-Application-ID>")) {
             System.out.println("Your Moesif Application ID is missing");
             return;
         }
@@ -22,14 +22,16 @@ public class MoesifWsClientExample {
             urlVar = args[1];
 
         String event = buildSampleMoesifEvent();
-        MoesifClient misterClient = new MoesifClient();
-        MoesifResponse resp = misterClient.sendToMoesif(urlVar, event, moesifApplicationID);
+        MoesifClient newClient = new MoesifClient();
+        MoesifResponse resp = newClient.sendToMoesif(urlVar, event, moesifApplicationID);
 
         System.out.println("Response status code: " + resp.statusCode);
         if (resp.body.length() > 1)
             System.out.println("Response body: " + resp.body);
         if (resp.statusCode >= 400)
             System.out.println("There was an error in sending the event to Moesif");
+        else
+            System.out.println("Event successfully sent to Moesif");
     }
 
     /**
