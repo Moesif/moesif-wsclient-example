@@ -43,9 +43,9 @@ Moesif has validated MoesifWsClientExample against the following combinations:
 
 | Scala         | Play WS          |
 |---------------|------------------|
-| Scala 2.11.12 | 2.7.9<br/>2.8.16 |
-| Scala 2.13.8  | 2.7.9<br/>2.8.16 |
+| Scala 2.11.12 | 2.7.9            |
 | Scala 2.12.16 | 2.7.9<br/>2.8.16 |
+| Scala 2.13.8  | 2.7.9<br/>2.8.16 |
 
 
 ### Future Updates
