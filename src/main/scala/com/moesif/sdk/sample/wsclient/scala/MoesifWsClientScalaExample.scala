@@ -12,8 +12,8 @@ object MoesifWsClientScalaExample {
    * @param args Moesif Application ID, (optional URL)
    */
   def main(args: Array[String]): Unit ={
-    if (args.length == 0) {
-      System.out.println("Your Moesif Application ID is missing")
+    if (args.length == 0 || args(0) == "<Your-Moesif-Application-ID>") {
+      println("Your Moesif Application ID is missing")
       return
     }
     val moesifApplicationID: String = args(0)
@@ -32,6 +32,8 @@ object MoesifWsClientScalaExample {
       println("Response body: " + resp.body)
     if (resp.statusCode >= 400)
       println("There was an error in sending the event to Moesif")
+    else
+      println("Event successfully sent to Moesif")
   }
 
   /**

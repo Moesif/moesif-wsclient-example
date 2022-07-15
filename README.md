@@ -7,15 +7,20 @@ platform. MoesifWsClientExample is a sample program which makes and
 sends a sample API to Moesif.
 
 ## How to run this example
-Java:
+Send single event to Moesif (Java):
 ```bash
-sbt "runMain com.moesif.sdk.sample.wsclient.MoesifWsClientExample <Your Moesif Application ID>"
+sbt "runMain com.moesif.sdk.sample.wsclient.MoesifWsClientExample <Your-Moesif-Application-ID>"
 ```
 
-Scala:
+Send single event to Moesif (Scala):
 ```bash
-sbt "runMain com.moesif.sdk.sample.wsclient.scala.MoesifWsClientScalaExample <Your Moesif Application ID>"
-```  
+sbt "runMain com.moesif.sdk.sample.wsclient.scala.MoesifWsClientScalaExample <Your-Moesif-Application-ID>"
+```
+
+Send a batch of events (Java):
+```bash
+sbt "runMain com.moesif.sdk.sample.wsclient.MoesifWsClientBatchExample <Number-of-events> <Your-Moesif-Application-ID>"
+```
 
 Your Moesif Collector Application Id can be found in the
 [_Moesif Portal_](https://www.moesif.com/). After signing up for a
