@@ -1,10 +1,14 @@
-# Moesif WS Client Example
-
-WS is a library used in code to call REST APIs.
+# Moesif Play WS Client Example
 
 [Moesif](https://www.moesif.com) is an API analytics and monitoring
 platform. MoesifWsClientExample is a sample program which makes and
-sends a sample API to Moesif.
+sends a sample event to Moesif.
+
+[Standalone Play WS](https://github.com/playframework/play-ws) is an async HTTP client with fluent API.
+It is part of [Play Framework](https://www.playframework.com/documentation/2.8.x/JavaWS)
+
+This repository contains an example in Java and in Scala to send events to Moesif.  
+[See Moesif documentation](https://www.moesif.com/docs/api#log-an-api-call)
 
 ## How to run this example
 Send single event to Moesif (Java):
